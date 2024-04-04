@@ -120,4 +120,114 @@ public class Lentolippu {
             this.matkustusluokka = 2;
         }
     }
+
+    /**
+     * Tarkistaa tietylle lennolle annetut lähtö -ja kohdekaupungit
+     * Määrittää kaupunkien välimatkan sekä palauttaa tämän
+     * @return etaisyys
+     */
+    public double etaisyysMaarittelija(){
+        String lahto = getLahtoPaikka();
+        String kohde = getMatkaKohde();
+        double etaisyys = 0.0;
+
+        switch (lahto){
+
+            case "Helsinki":
+                switch (kohde){
+                    case "Singapore":
+                        etaisyys = 9259.0;
+                        break;
+                    case "New York":
+                        etaisyys = 6614.0;
+                        break;
+                    case "Amsterdam":
+                        etaisyys = 1499.7;
+                        break;
+                    case "Antalya":
+                        etaisyys = 2617.8;
+                        break;
+                    default:
+                        etaisyys = 0.0;
+                }
+                break;
+
+            case "Singapore":
+                switch (kohde){
+                    case "Helsinki":
+                        etaisyys = 9259.0;
+                        break;
+                    case "New York":
+                        etaisyys = 15330.6;
+                        break;
+                    case "Amsterdam":
+                        etaisyys = 10485.0;
+                        break;
+                    case "Antalya":
+                        etaisyys = 8415.0;
+                        break;
+                    default:
+                        etaisyys = 0.0;
+                }
+                break;
+
+            case "New York":
+                switch (kohde){
+                    case "Helsinki":
+                        etaisyys = 6614.0;
+                        break;
+                    case "Singapore":
+                        etaisyys = 15330.6;
+                        break;
+                    case "Amsterdam":
+                        etaisyys = 5862.0;
+                        break;
+                    case "Antalya":
+                        etaisyys = 8473.2;
+                        break;
+                    default:
+                        etaisyys = 0.0;
+                }
+                break;
+
+            case "Amsterdam":
+                switch (kohde){
+                    case "Helsinki":
+                        etaisyys = 1499.7;
+                        break;
+                    case "Singapore":
+                        etaisyys = 10485.0;
+                        break;
+                    case "New York":
+                        etaisyys = 5862.0;
+                        break;
+                    case "Antalya":
+                        etaisyys = 2658.0;
+                        break;
+                    default:
+                        etaisyys = 0.0;
+                }
+                break;
+
+            case "Antalya":
+                switch (kohde){
+                    case "Helsinki":
+                        etaisyys = 2617.8;
+                        break;
+                    case "Singapore":
+                        etaisyys = 8415.0;
+                        break;
+                    case "New York":
+                        etaisyys = 8473.2;
+                        break;
+                    case "Amsterdam":
+                        etaisyys = 2658.0;
+                        break;
+                    default:
+                        etaisyys = 0.0;
+                }
+                break;
+        }
+        return etaisyys;
+    }
 }
