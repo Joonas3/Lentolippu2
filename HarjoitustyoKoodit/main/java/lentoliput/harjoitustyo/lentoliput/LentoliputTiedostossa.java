@@ -1,12 +1,13 @@
 package lentoliput.harjoitustyo.lentoliput;
 
-import lentoliput.harjoitustyo.lentoliput.Lentolippu;
-
 import java.io.*;
 
 public class LentoliputTiedostossa {
     public Lentolippu[] lentoliput = new Lentolippu[20];
 
+    /**
+     * Tiedoston lukemista sekä kirjoittamista
+     */
     public LentoliputTiedostossa(){
         try {
             File tiedosto = new File("lentoliput.dat");
@@ -29,6 +30,10 @@ public class LentoliputTiedostossa {
             System.out.println("Lukemisessa virhe");
         }
     }
+
+    /**
+     * Metodi, jolla kirjoitetaan liput tiedostoon
+     */
     public void kirjoitaTiedostoon(){
         try{
             FileOutputStream lipputiedosto = new FileOutputStream("lentoliput.dat");

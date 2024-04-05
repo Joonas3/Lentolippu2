@@ -124,8 +124,7 @@ public class Lentolippu {
     }
 
     /**
-     * Tarkistaa tietylle lennolle annetut lähtö -ja kohdekaupungit
-     * Määrittää kaupunkien välimatkan sekä palauttaa tämän
+     * Palauttaa lennolle annetut lähtö -ja kohdekaupunkien välimatkan
      * @return etaisyys
      */
     public double etaisyysMaarittelija(){
