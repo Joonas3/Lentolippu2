@@ -1,3 +1,7 @@
+package lentoliput.harjoitustyo.lentoliput;
+
+import lentoliput.harjoitustyo.lentoliput.Lentolippu;
+
 import java.io.*;
 
 public class LentoliputTiedostossa {
