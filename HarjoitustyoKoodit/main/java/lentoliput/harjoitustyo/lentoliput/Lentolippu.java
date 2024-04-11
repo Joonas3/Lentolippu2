@@ -1,10 +1,11 @@
 package lentoliput.harjoitustyo.lentoliput;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Lentolippu {
+public class Lentolippu implements Serializable {
     private String nimi;
-    private Date lentoPvm;
+    private Date pvm;
     private String matkaKohde;
     private String lahtoPaikka;
     private int matkustusluokka;
@@ -14,7 +15,7 @@ public class Lentolippu {
      */
     public Lentolippu(){
         this.nimi = "";
-        this.lentoPvm = new Date();
+        this.pvm = new Date();
         this.matkaKohde = "";
         this.lahtoPaikka = "";
         this.matkustusluokka = 2;
@@ -23,15 +24,15 @@ public class Lentolippu {
     /**
      * Luo lentolipun annetuilla parametreilla
      * @param nimi
-     * @param lentoPvm
+     * @param pvm
      * @param matkaKohde
      * @param lahtoPaikka
      * @param matkustusluokka
      */
-    public Lentolippu(String nimi, Date lentoPvm, String matkaKohde,
+    public Lentolippu(String nimi, Date pvm, String matkaKohde,
                       String lahtoPaikka, int matkustusluokka){
         this.nimi = nimi;
-        this.lentoPvm = lentoPvm;
+        this.pvm = pvm;
         this.matkaKohde = matkaKohde;
         this.lahtoPaikka = lahtoPaikka;
         this.matkustusluokka = matkustusluokka;
@@ -47,10 +48,10 @@ public class Lentolippu {
 
     /**
      * Palauttaa lennon lähtöpäivämäärän
-     * @return lentoPvm
+     * @return pvm
      */
-    public Date getLentoPvm() {
-        return lentoPvm;
+    public Date getPvm() {
+        return pvm;
     }
 
     /**
@@ -87,10 +88,10 @@ public class Lentolippu {
 
     /**
      * Asettaa lennon lähtöpäivämäärän
-     * @param lentoPvm lennon lähtöpäivämäärä
+     * @param pvm lennon lähtöpäivämäärä
      */
-    public void setLentoPvm(Date lentoPvm) {
-        this.lentoPvm = lentoPvm;
+    public void setLentoPvm(Date pvm) {
+        this.pvm = pvm;
     }
 
     /**

@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c754acfe-9c73-4c51-945d-e0b2e3a7efbb" name="Changes" comment="Commit">
+      <change afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/TiedostonPoisto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lentoliput.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/Lentolippu.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/Lentolippu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LentolippuJarjestelma.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LentolippuJarjestelma.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LentoliputTiedostossa.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LentoliputTiedostossa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LipunLisatiedot.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LipunLisatiedot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LipunTietoja.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/TiedostoRajapinta.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaFXApplication" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -51,6 +56,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.HelloApplication.executor": "Run",
     "Application.LentolippuJarjestelma.executor": "Run",
+    "Application.TiedostonPoisto.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -103,7 +109,14 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1712329838463</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1712350071139</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1712350071139</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

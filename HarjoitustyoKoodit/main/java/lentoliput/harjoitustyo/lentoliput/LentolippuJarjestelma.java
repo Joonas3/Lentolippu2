@@ -11,6 +11,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class LentolippuJarjestelma extends Application {
     int iLippu = 0;
@@ -49,11 +51,9 @@ public class LentolippuJarjestelma extends Application {
         //Näiden sijoitus kahteen alasvetolistaan
         ComboBox<String> cbxlahtoPaikat = new ComboBox<>();
         cbxlahtoPaikat.setPrefWidth(100);
-        cbxlahtoPaikat.setValue("Helsinki");
 
         ComboBox<String> cbxmatkaKohteet = new ComboBox<>();
         cbxmatkaKohteet.setPrefWidth(100);
-        cbxmatkaKohteet.setValue("Helsinki");
 
         ObservableList<String> sisalto =
                 FXCollections.observableArrayList(kaupungit);
@@ -82,6 +82,7 @@ public class LentolippuJarjestelma extends Application {
 
         //Uusi ikkuna, joka on lopullinen lentolippu
         BorderPane lippuIkkuna = new BorderPane();
+        Button btLopeta = new Button("Tallenna ja sulje");
         Scene ikkuna = new Scene(lippuIkkuna,600, 300);
 
         //Sijoitetaan kaikki hBoxit vBoxiin, jotta tavarat ovat ikkunassa allekain
@@ -91,11 +92,79 @@ public class LentolippuJarjestelma extends Application {
         paneeli.setLeft(lv);
         paneeli.setCenter(vBox);
 
-        //Painikkeelle toiminnallisuus
+        //Eri lentolippujen valintalistalle, eli listviewille toiminnallisuus
+        lv.getSelectionModel().selectedItemProperty().addListener(ov->{
+            iLippu = lv.getSelectionModel().getSelectedIndex();
+        });
+
+        //Painike, josta voidaan tallentaa tiedot ja sulkea sovellus
+        btLopeta.setOnAction(e->{
+            kaikkiLentoLiput.tiedostoonKirjoitus();
+            System.exit(0);
+        });
+
+        //Toiminnallisuudet comboboxeille
+        cbxlahtoPaikat.setOnAction(e->{
+            String valittuKaupunki1 = cbxlahtoPaikat.getValue();
+            kaikkiLentoLiput.lentoliput[iLippu].setLahtoPaikka(valittuKaupunki1);
+        });
+
+        cbxmatkaKohteet.setOnAction(e->{
+            String valittuKaupunki2 = cbxmatkaKohteet.getValue();
+            kaikkiLentoLiput.lentoliput[iLippu].setMatkaKohde(valittuKaupunki2);
+        });
+
+        //Uuden ikkunan painikkeelle toiminnallisuus
         btLippuIkkuna.setOnAction(e->{
             primaryStage.setScene(ikkuna);
             primaryStage.setTitle("BOARDING PASS");
             primaryStage.show();
+            lippuIkkuna.setBottom(btLopeta);
+
+            //Otetaan nimi tekstikentästä, jos ei kirjoita mitään, näytetään tiedostoon tallennettu nimi
+            String matkustajaNimi = tfNimi.getText();
+            if (matkustajaNimi.isEmpty()){
+                matkustajaNimi = kaikkiLentoLiput.lentoliput[iLippu].getNimi();
+            }
+            else{
+                kaikkiLentoLiput.lentoliput[iLippu].setNimi(matkustajaNimi);
+            }
+
+
+            //Lisätään uuteen ikkunaan käyttäjän syöttämä nimi
+            Label nimi = new Label(matkustajaNimi);
+            lippuIkkuna.setCenter(nimi);
+
+            //Lisätään lähtö -ja saapumiskaupunki uuteen ikkunaan
+            Label lahtoKaupunki = new Label(kaikkiLentoLiput.lentoliput[iLippu].getLahtoPaikka());
+            lippuIkkuna.setTop(lahtoKaupunki);
+            Label saapumisKaupunki = new Label(kaikkiLentoLiput.lentoliput[iLippu].getMatkaKohde());
+            lippuIkkuna.setRight(saapumisKaupunki);
+
+            //Käsitellään matkustajaluokan valinta
+            int matkustusLuokka;
+            if (!tfmLuokka.getText().isEmpty()){
+                matkustusLuokka = Integer.parseInt(tfmLuokka.getText());
+            }
+            else {
+                matkustusLuokka = 2;
+            }
+            kaikkiLentoLiput.lentoliput[iLippu].setMatkustusluokka(matkustusLuokka);
+
+            Label matkustajaLuokkaLabel = new Label(Integer.toString(
+                    kaikkiLentoLiput.lentoliput[iLippu].getMatkustusluokka()));
+            lippuIkkuna.setTop(matkustajaLuokkaLabel);
+
+            //Lisätään lippuun sen luomispäivämäärä
+            SimpleDateFormat pvmFormat = new SimpleDateFormat("dd.MM.yyyy");
+            Date luomisPvm = kaikkiLentoLiput.lentoliput[iLippu].getPvm();
+            Label pvmTeksti = new Label(pvmFormat.format(luomisPvm));
+            lippuIkkuna.setRight(pvmTeksti);
+
+            //Näytetään kaupunkien välinen etäisyys lippuikkunassa
+            Label etaisyys = new Label(Double.toString(kaikkiLentoLiput.lentoliput[iLippu].etaisyysMaarittelija()));
+            lippuIkkuna.setTop(etaisyys);
+
         });
 
         //Loput toiminnallisuudet sekä lentolipun luonti tulee tästä eteenpäin->
@@ -106,6 +175,7 @@ public class LentolippuJarjestelma extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
     public static void main(String[] args) {
         launch(args);
     }
