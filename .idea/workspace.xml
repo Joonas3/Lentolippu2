@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c754acfe-9c73-4c51-945d-e0b2e3a7efbb" name="Changes" comment="Commit">
-      <change afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/TiedostonPoistaja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lentoliput.dat" beforeDir="false" afterPath="$PROJECT_DIR$/lentoliput.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LipunLisatiedot.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LipunLisatiedot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +16,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../lentoliput\exportToHTML" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -57,7 +61,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   },
   "keyToStringList": {
     "ChangesTree.GroupingKeys": [
@@ -132,7 +137,21 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1712942903634</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1712943824853</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1712943824853</updated>
+    </task>
+    <task id="LOCAL−00009" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1712943944414</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1712943944414</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
