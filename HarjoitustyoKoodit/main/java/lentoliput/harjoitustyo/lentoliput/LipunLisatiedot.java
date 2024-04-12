@@ -1,10 +1,5 @@
-/*package lentoliput.harjoitustyo.lentoliput;
-abstract class LipunLisatiedot extends Lentolippu{
-    public abstract void hintaLaskuri();
+package lentoliput.harjoitustyo.lentoliput;
+abstract class olionTiedot{
+    abstract void setMatkustusluokka(int matkustusluokka);
+    abstract double etaisyysMaarittelija();
 }
-class LasketaanHinta extends LipunLisatiedot{
-    public double hintaLippu = 0.0;
-    public void hintaLaskuri(){
-        this.hintaLippu = etaisyysMaarittelija()/10;
-    }
-}*/

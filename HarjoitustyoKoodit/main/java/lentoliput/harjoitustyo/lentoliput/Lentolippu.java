@@ -3,7 +3,7 @@ package lentoliput.harjoitustyo.lentoliput;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Lentolippu implements Serializable {
+public class Lentolippu extends olionTiedot implements Serializable {
     private String nimi;
     private Date pvm;
     private String matkaKohde;
@@ -90,7 +90,7 @@ public class Lentolippu implements Serializable {
      * Asettaa lennon lähtöpäivämäärän
      * @param pvm lennon lähtöpäivämäärä
      */
-    public void setLentoPvm(Date pvm) {
+    public void setPvm(Date pvm) {
         this.pvm = pvm;
     }
 
