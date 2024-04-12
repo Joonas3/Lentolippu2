@@ -8,7 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/Lentolippu.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/Lentolippu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LentolippuJarjestelma.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LentolippuJarjestelma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LipunLisatiedot.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LipunLisatiedot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LentoliputTiedostossa.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LentoliputTiedostossa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/TiedostoRajapinta.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/TiedostoRajapinta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lentoliput.dat" beforeDir="false" afterPath="$PROJECT_DIR$/lentoliput.dat" afterDir="false" />
     </list>
@@ -120,7 +120,14 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1712875474676</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1712935177387</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1712935177387</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

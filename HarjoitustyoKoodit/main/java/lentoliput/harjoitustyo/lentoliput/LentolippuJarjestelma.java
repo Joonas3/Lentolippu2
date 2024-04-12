@@ -7,9 +7,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
@@ -88,7 +86,7 @@ public class LentolippuJarjestelma extends Application {
         //Uusi ikkuna, joka on lopullinen lentolippu
         BorderPane lippuIkkuna = new BorderPane();
         Button btLopeta = new Button("Tallenna ja sulje");
-        Scene ikkuna = new Scene(lippuIkkuna,700, 300);
+        Scene ikkuna = new Scene(lippuIkkuna,600, 300);
 
         //Sijoitetaan kaikki hBoxit vBoxiin, jotta tavarat ovat ikkunassa allekain
         VBox vBox = new VBox(ylaosa, kaupunkiValinta, alaosa);
@@ -124,6 +122,7 @@ public class LentolippuJarjestelma extends Application {
             primaryStage.setScene(ikkuna);
             primaryStage.setTitle("BOARDING PASS");
             primaryStage.show();
+            lippuIkkuna.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, null, null)));
             primaryStage.setResizable(false);
 
             //Otetaan nimi tekstikentästä, jos ei kirjoita mitään, näytetään tiedostoon tallennettu nimi
@@ -146,20 +145,26 @@ public class LentolippuJarjestelma extends Application {
             lahtoKaupunki.setFont(Font.font(20));
             Text from = new Text("FROM");
             from.setFill(Color.DARKGREEN);
+
             Label saapumisKaupunki = new Label(kaikkiLentoLiput.lentoliput[iLippu].getMatkaKohde());
             saapumisKaupunki.setFont(Font.font(20));
             Text to = new Text("TO");
             to.setFill(Color.DARKGREEN);
 
             //Käsitellään matkustajaluokan valinta
-            int matkustusLuokka;
-            if (!tfmLuokka.getText().isEmpty()){
-                matkustusLuokka = Integer.parseInt(tfmLuokka.getText());
+            try{
+                int matkustusLuokka;
+                if (!tfmLuokka.getText().isEmpty()){
+                    matkustusLuokka = Integer.parseInt(tfmLuokka.getText());
+                }
+                else {
+                    matkustusLuokka = 2;
+                }
+                kaikkiLentoLiput.lentoliput[iLippu].setMatkustusluokka(matkustusLuokka);
             }
-            else {
-                matkustusLuokka = 2;
+            catch (Exception ex){
+                System.out.println("Matkustajaluokan täytyy olla numero");
             }
-            kaikkiLentoLiput.lentoliput[iLippu].setMatkustusluokka(matkustusLuokka);
 
             Label matkustajaLuokkaLabel = new Label(Integer.toString(
                     kaikkiLentoLiput.lentoliput[iLippu].getMatkustusluokka()));
@@ -190,39 +195,42 @@ public class LentolippuJarjestelma extends Application {
             created.setFill(Color.DARKGREEN);
 
             //Näytetään kaupunkien välinen etäisyys lippuikkunassa
-            Label etaisyysLabel = new Label(
-                    (Double.toString(etaisyys)) + " km");
+            Label etaisyysLabel = new Label((etaisyys) + " km");
             etaisyysLabel.setFont(Font.font(20));
             Text distance = new Text("DISTANCE");
             distance.setFill(Color.DARKGREEN);
 
-            //Luodaan teksti lippuuikkunan pohjalle sekä lisätään "tallenna ja sulje" -nappi lippuikkunaan
+            //Luodaan teksti lippuikkunan pohjalle sekä lisätään "tallenna ja sulje" -nappi
             Label enjoy = new Label("Enjoy your flight!");
             enjoy.setFont(Font.font("Italic", FontWeight.NORMAL, FontPosture.ITALIC, 20));
             enjoy.setTextFill(Color.DARKGREEN);
 
             HBox lipunAlaosa = new HBox(btLopeta, enjoy);
-            lipunAlaosa.setSpacing(350);
+            lipunAlaosa.setSpacing(300);
             lipunAlaosa.setPadding(new Insets(10,10,10,10));
             lipunAlaosa.setAlignment(Pos.BOTTOM_CENTER);
             lippuIkkuna.setBottom(lipunAlaosa);
 
-            //Tavaroiden asettelua lippuikkunana vasempaan laitaan sekä ylös
+            //Tavaroiden asettelua lippuikkunana vasempaan laitaan
 
             VBox vasenLaita = new VBox(from, lahtoKaupunki, to, saapumisKaupunki, distance, etaisyysLabel);
             vasenLaita.setAlignment(Pos.CENTER_LEFT);
             vasenLaita.setPadding(new Insets(10,10,10,30));
             lippuIkkuna.setLeft(vasenLaita);
 
+            //Tavaroiden asettelua ylös
             Text dreamAir = new Text("DreamAir");
             dreamAir.setFont(Font.font("BoldItalic", FontWeight.BOLD, FontPosture.ITALIC, 40));
             dreamAir.setFill(Color.DARKGREEN);
-            VBox yhtionnimi = new VBox(dreamAir);
+            VBox lentoyhtio = new VBox(dreamAir);
+            lentoyhtio.setPadding(new Insets(10,10,10,0));
 
             VBox passengerName = new VBox(name_of_passenger, nimi);
             passengerName.setPadding(new Insets(10,200,10,30));
 
-            HBox lippuYlaosa = new HBox(passengerName, yhtionnimi);
+            BorderPane lippuYlaosa = new BorderPane();
+            lippuYlaosa.setLeft(passengerName);
+            lippuYlaosa.setRight(lentoyhtio);
             lippuIkkuna.setTop(lippuYlaosa);
 
             //Tavaroiden asettelua lippuikkunan oikeaan laitaan

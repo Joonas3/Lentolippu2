@@ -23,11 +23,11 @@ public class Lentolippu extends olionTiedot implements Serializable {
 
     /**
      * Luo lentolipun annetuilla parametreilla
-     * @param nimi
-     * @param pvm
-     * @param matkaKohde
-     * @param lahtoPaikka
-     * @param matkustusluokka
+     * @param nimi matkustajan nimi
+     * @param pvm lipun luontipäivämäärä
+     * @param matkaKohde lennon kohdekaupunki
+     * @param lahtoPaikka lennon lähtökaupunki
+     * @param matkustusluokka makustajan matkustusluokka
      */
     public Lentolippu(String nimi, Date pvm, String matkaKohde,
                       String lahtoPaikka, int matkustusluokka){
@@ -131,105 +131,46 @@ public class Lentolippu extends olionTiedot implements Serializable {
     public double etaisyysMaarittelija(){
         String lahto = getLahtoPaikka();
         String kohde = getMatkaKohde();
-        double etaisyys = 0.0;
 
-        switch (lahto){
+        double etaisyys = switch (lahto) {
+            case "Helsinki" -> switch (kohde) {
+                case "Singapore" -> 9259.0;
+                case "New York" -> 6614.0;
+                case "Amsterdam" -> 1499.7;
+                case "Antalya" -> 2617.8;
+                default -> 0.0;
+            };
+            case "Singapore" -> switch (kohde) {
+                case "Helsinki" -> 9259.0;
+                case "New York" -> 15330.6;
+                case "Amsterdam" -> 10485.0;
+                case "Antalya" -> 8415.0;
+                default -> 0.0;
+            };
+            case "New York" -> switch (kohde) {
+                case "Helsinki" -> 6614.0;
+                case "Singapore" -> 15330.6;
+                case "Amsterdam" -> 5862.0;
+                case "Antalya" -> 8473.2;
+                default -> 0.0;
+            };
+            case "Amsterdam" -> switch (kohde) {
+                case "Helsinki" -> 1499.7;
+                case "Singapore" -> 10485.0;
+                case "New York" -> 5862.0;
+                case "Antalya" -> 2658.0;
+                default -> 0.0;
+            };
+            case "Antalya" -> switch (kohde) {
+                case "Helsinki" -> 2617.8;
+                case "Singapore" -> 8415.0;
+                case "New York" -> 8473.2;
+                case "Amsterdam" -> 2658.0;
+                default -> 0.0;
+            };
+            default -> 0.0;
+        };
 
-            case "Helsinki":
-                switch (kohde){
-                    case "Singapore":
-                        etaisyys = 9259.0;
-                        break;
-                    case "New York":
-                        etaisyys = 6614.0;
-                        break;
-                    case "Amsterdam":
-                        etaisyys = 1499.7;
-                        break;
-                    case "Antalya":
-                        etaisyys = 2617.8;
-                        break;
-                    default:
-                        etaisyys = 0.0;
-                }
-                break;
-
-            case "Singapore":
-                switch (kohde){
-                    case "Helsinki":
-                        etaisyys = 9259.0;
-                        break;
-                    case "New York":
-                        etaisyys = 15330.6;
-                        break;
-                    case "Amsterdam":
-                        etaisyys = 10485.0;
-                        break;
-                    case "Antalya":
-                        etaisyys = 8415.0;
-                        break;
-                    default:
-                        etaisyys = 0.0;
-                }
-                break;
-
-            case "New York":
-                switch (kohde){
-                    case "Helsinki":
-                        etaisyys = 6614.0;
-                        break;
-                    case "Singapore":
-                        etaisyys = 15330.6;
-                        break;
-                    case "Amsterdam":
-                        etaisyys = 5862.0;
-                        break;
-                    case "Antalya":
-                        etaisyys = 8473.2;
-                        break;
-                    default:
-                        etaisyys = 0.0;
-                }
-                break;
-
-            case "Amsterdam":
-                switch (kohde){
-                    case "Helsinki":
-                        etaisyys = 1499.7;
-                        break;
-                    case "Singapore":
-                        etaisyys = 10485.0;
-                        break;
-                    case "New York":
-                        etaisyys = 5862.0;
-                        break;
-                    case "Antalya":
-                        etaisyys = 2658.0;
-                        break;
-                    default:
-                        etaisyys = 0.0;
-                }
-                break;
-
-            case "Antalya":
-                switch (kohde){
-                    case "Helsinki":
-                        etaisyys = 2617.8;
-                        break;
-                    case "Singapore":
-                        etaisyys = 8415.0;
-                        break;
-                    case "New York":
-                        etaisyys = 8473.2;
-                        break;
-                    case "Amsterdam":
-                        etaisyys = 2658.0;
-                        break;
-                    default:
-                        etaisyys = 0.0;
-                }
-                break;
-        }
         return etaisyys;
     }
 }

@@ -4,5 +4,5 @@ public interface TiedostoRajapinta {
     /**
      * tiedostoonKirjoitus -metodi toteutetaan LentolipuTiedostossa -luokassa
      */
-    public void tiedostoonKirjoitus();
+    void tiedostoonKirjoitus();
 }

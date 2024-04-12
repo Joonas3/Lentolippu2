@@ -51,7 +51,6 @@ public class LentoliputTiedostossa implements TiedostoRajapinta {
         }
         catch (Exception e){
             System.out.println("Virhe kirjoittaessa tiedostoon");
-            System.out.println(e);
         }
     }
 }
