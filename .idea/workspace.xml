@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c754acfe-9c73-4c51-945d-e0b2e3a7efbb" name="Changes" comment="Commit">
+      <change afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/TiedostonPoistaja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/Lentolippu.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/Lentolippu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LentolippuJarjestelma.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LentolippuJarjestelma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LentoliputTiedostossa.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/LentoliputTiedostossa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/TiedostoRajapinta.java" beforeDir="false" afterPath="$PROJECT_DIR$/HarjoitustyoKoodit/main/java/lentoliput/harjoitustyo/lentoliput/TiedostoRajapinta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lentoliput.dat" beforeDir="false" afterPath="$PROJECT_DIR$/lentoliput.dat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +50,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.HelloApplication.executor": "Run",
     "Application.LentolippuJarjestelma.executor": "Run",
+    "Application.TiedostonPoistaja.executor": "Run",
     "Application.TiedostonPoisto.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -127,7 +125,14 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1712935177387</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1712942903634</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1712942903634</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
